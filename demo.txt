@@ -1,0 +1,16 @@
+if [ -d $1 ]; then
+    echo "$1 dir exists"
+    exit
+else
+    mkdir $1
+    cd $1
+    mkdir css js
+    echo '<!DOCTYPE>' > index.html 
+    echo '<title>Hello</title>' >> index.html
+    echo '<hl>Hi</hl>' >> index.html
+    echo 'hl{color: red;}' > css/style.css
+    echo 'var string = "Hello world"' > js/main.js
+    echo 'alert(string)' >> js/main.js
+    echo "success"
+    exit
+fi
